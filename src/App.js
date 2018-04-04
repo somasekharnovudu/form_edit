@@ -14,7 +14,8 @@ class App extends Component {
     let personsarr=[...this.state.persons];
     let index=this.state.epIndex;
     let person=personsarr.find(e=>e.name===val.name);
-    if(!person){
+    person=personsarr.find(e=>e.surname===val.surname);
+    if(!person && !index){
       personsarr.push(val);
       this.setState({persons:personsarr});
     }else if(person && index>=0){
